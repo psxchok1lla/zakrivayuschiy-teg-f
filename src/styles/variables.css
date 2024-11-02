@@ -1,1 +1,17 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+:root {
+  --accent-color: rgba(0 204 20/ 1);
+  --color-gradient-start: rgba(0 127 12 / 1);
+  --color-gradient-end: rgba(0 67 6 / 1);
+  --background-color: rgba(0 0 0/ 1);
+  --background-color-button: rgba(255 255 255/ 1);
+  --pointer-color: rgba(0 204 20/ 1);
+  --pointer-text-color: rgba(0 204 20/ 1);
+  --hover-text-color: rgba(0 0 0/ 0.6);
+  --active-text-color: rgba(0 0 0/ 0.6);
+  --gradient-start-color: rgba(0 0 0/ 1);
+  --gradient-interim-color: transparent;
+  --main-font-family: "Inter Variable";
+  --accent-font-family: "PressStart2P";
+}
