@@ -14,4 +14,7 @@
   --gradient-interim-color: transparent;
   --main-font-family: "Inter Variable";
   --accent-font-family: "PressStart2P";
+  --button-color-text: rgba(0 204 20/ 1);
+  --contour: rgba(0 204 20/ 1);
+  --filling: rgba(255 0 0 / 1);
 }

@@ -47,10 +47,10 @@
 }
 
 .header {
-  padding-top: 7.5rem;
+  padding-top: clamp(7.5rem, 7.148rem + 1.5vw, 8.5rem);
   padding-bottom: 1.625rem;
   margin-bottom: 6.25rem;
-  width: clamp(23.438rem, 16.373rem + 30.14vw, 43.5rem);;
+  width: clamp(23.438rem, 16.373rem + 30.14vw, 43.5rem);
   display: grid;
   font-family: var(--accent-font-family), sans-serif;
   text-align: center;
@@ -69,6 +69,7 @@
 .subtitle {
   font-size: clamp(0.875rem, 0.677rem + 0.85vw, 1.438rem);
   text-transform: uppercase;
+  margin-top: 20px;
 }
 
 .theme-menu__list {
@@ -78,12 +79,14 @@
 }
 
 .theme-menu__item:not(:last-child) {
-  padding-bottom: 14px;
+  padding-bottom: 9px;
 }
 
 .theme-menu__button {
   position: relative;
-  padding-left: 1.25rem; 
+  padding-left: 1.25rem;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 .theme-menu__button:hover {
@@ -94,10 +97,10 @@
 .theme-menu__button:disabled {
   opacity: 0.6;
   pointer-events: none;
-} 
+}
 
 .theme-light .theme-menu__button[data-theme="light"]::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 50%;
@@ -109,7 +112,7 @@
 }
 
 .theme-dark .theme-menu__button[data-theme="dark"]::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 50%;
@@ -121,7 +124,7 @@
 }
 
 .theme-auto .theme-menu__button[data-theme="auto"]::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 50%;
@@ -143,8 +146,9 @@
   }
 }
 
-
 .card-list {
+  display: flex;
+  flex-direction: column;
   gap: 3.125rem;
 }
 
@@ -157,14 +161,15 @@
 
 .card-title {
   font-size: 1.125rem;
-  font-weight: 785;
+  font-weight: bold;
   justify-self: center;
   line-height: 1.375rem;
   margin-left: 0.625rem;
-  margin-bottom: 2px;
+  padding-bottom: 4px;
+  padding-top: 4px;
 }
 
-.picture-content{
+.picture-content {
   position: relative;
 }
 
@@ -180,15 +185,16 @@
   right: clamp(0.688rem, 0.379rem + 1.31vw, 1.563rem);
   mix-blend-mode: hard-light;
   position: absolute;
+  font-size: 14px;
   font-family: var(--accent-font-family);
   opacity: 0.5;
   color: var(--accent-color);
-  text-shadow: -1px -1px 0 var(--background-color),
-                1px -1px 0 var(--background-color),
-               -1px 1px 0 var(--background-color),
-                1px 1px 0 var(--background-color);
+  text-shadow:
+    -1px -1px 0 var(--background-color),
+    1px -1px 0 var(--background-color),
+    -1px 1px 0 var(--background-color),
+    1px 1px 0 var(--background-color);
   z-index: 1;
-  text-transform: uppercase;
 }
 
 @supports (-webkittext-stroke: 1px #fff) {
@@ -203,6 +209,7 @@
 }
 
 .card-description {
+  font-size: 1.125rem;
   line-height: 1.3125rem;
 }
 
@@ -213,13 +220,13 @@
 .card__icon-button {
   font-size: 0.875rem;
   line-height: 90%;
-  overflow: hidden;
 }
 
-.save-button {
+.button-wrapper {
   display: flex;
   position: relative;
   justify-content: center;
+  flex-direction: column;
   text-align: center;
   color: var(--accent-color);
   font-family: var(--accent-font-family);
@@ -231,9 +238,161 @@
   max-width: fit-content;
   justify-self: center;
   align-self: center;
+  gap: 8px;
+}
+
+.save-button {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  gap: 8px;
 }
 
 .save-button p {
-  margin-top: 8px;
+  font-size: 14px;
+  line-height: 0.9;
   flex-wrap: nowrap;
+  align-self: center;
+}
+
+.card__icon-button:focus-visible {
+  box-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.card__icon-button:hover {
+  cursor: pointer;
+}
+
+.button-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+  z-index: 0;
+}
+
+.button-wrapper:hover::before {
+  transform: scaleX(1);
+}
+
+.save-button p,
+.save-button svg {
+  position: relative;
+  z-index: 1;
+  color: var(--button-color-text);
+  mix-blend-mode: difference;
+  transition: color 0.5s ease-in-out;
+}
+
+.custom-button {
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
+  transition: color 0.5s ease-in-out;
+  font-size: 14px;
+  line-height: 0.9;
+}
+
+dialog {
+  padding: 30px;
+  position: fixed;
+  inset: 0;
+  display: grid;
+  border-width: 2px;
+  transition: opacity 0.3s ease-in-out;
+  background-color: var(--background-color);
+  color: var(--accent-color);
+  width: clamp(21.313rem, 21.048rem + 1.13vw, 22.063rem);
+  height: 11.9375rem;
+  gap: 1.875rem;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.7);
+}
+
+dialog:not([open]) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dialog-content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  text-align: left;
+}
+
+.dialog-content svg {
+  justify-self: center;
+  align-self: center;
+}
+
+.dialog-text {
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+.close-button {
+  margin-top: 30px;
+  border: 2px solid var(--accent-color);
+  width: 100%;
+  height: 2.375rem;
+  text-transform: uppercase;
+}
+
+.close-button:hover {
+  cursor: pointer;
+}
+
+.close-button:active {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+}
+
+.card-freetrack img {
+  filter: invert(1) brightness(200%) saturate(60%) hue-rotate(90deg);
+}
+
+.card-1-1sprint img {
+  filter: brightness(400%);
+}
+
+.card-1-2sprint img {
+  filter: saturate(30%);
+}
+
+.card-2-1sprint img {
+  filter: hue-rotate(170deg);
+}
+
+.card-2-2sprint img {
+  filter: opacity(25%);
+}
+
+.card-3-1sprint img {
+  filter: invert(75%);
+}
+
+.card-3-2sprint img {
+  filter: contrast(200%);
+}
+
+.card-now img {
+  filter: sepia(60%);
+}
+
+@media (width > 48rem) {
+
+  .save-button {
+    flex-direction: row;
+  }
 }
