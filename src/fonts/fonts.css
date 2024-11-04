@@ -13,7 +13,10 @@
   font-family: "PressStart2P";
   src:
     local("PressStart2P-Regular"),
-    url(./PressStart2P-Regular.woff) format("woff"),
     url(./PressStart2P-Regular.woff) format("woff");
   font-display: swap;
+}
+
+.text_weight_bold {
+  font-variation-settings: "wght" 900;
 }
