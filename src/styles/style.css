@@ -86,6 +86,7 @@
   position: relative;
   text-transform: uppercase;
   font-size: 14px;
+  transition: transform 0.3s ease;
 }
 
 .theme-menu__button:hover {
@@ -110,9 +111,14 @@
   transform: scaleX(1);
 }
 
+.theme-menu__button:focus-visible {
+  opacity: 0.6;
+}
+
 .theme-menu__button:disabled {
   opacity: 0.6;
   pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
 .theme-light .theme-menu__button[data-theme="light"]::before {
@@ -182,15 +188,12 @@
   padding-top: 4px;
 }
 
-.picture-content {
-  position: relative;
-}
-
 .card-picture {
   position: relative;
   width: 100%;
   border-top: solid 2px var(--accent-color);
   border-bottom: solid 2px var(--accent-color);
+  display: flex;
   object-fit: cover;
   object-position: center;
 }
@@ -221,16 +224,23 @@
 }
 
 .card-content {
-  padding: 22px 1.5625rem;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 25px;
+  padding: 1.5625rem;
 }
 
 .card-description {
-  font-size: 1.125rem;
-  line-height: 1.3125rem;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 27px;
 }
 
-.card-description:not(:last-child) {
-  margin-bottom: 1.6875rem;
+.card-description p {
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
 }
 
 .card__icon-button {
@@ -257,12 +267,17 @@
   gap: 8px;
 }
 
+.button-wrapper:hover {
+  cursor: pointer;
+}
+
 .save-button {
   display: flex;
   flex-direction: column;
   position: relative;
   align-items: center;
   justify-content: center;
+  background-color: transparent;
   gap: 8px;
   padding: 0;
   width: clamp(19.125rem, 18.487rem + 2.72vw, 20.938rem);
@@ -317,7 +332,7 @@
 
 .button-effect:hover {
   color: var(--button-color-text);
-  mix-blend-mode: difference;
+  cursor: pointer;
 }
 
 .save-button p,
@@ -395,36 +410,60 @@ dialog:not([open]) {
   color: var(--background-color);
 }
 
-.multiple-filter img {
+.multiple-filter {
   filter: invert(1) brightness(200%) saturate(60%) hue-rotate(90deg);
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-.brightness-filter img {
+.brightness-filter {
   filter: brightness(400%);
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-.saturate-filter img {
+.saturate-filter {
   filter: saturate(30%);
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-.hue-rotate-filter img {
+.hue-rotate-filter {
   filter: hue-rotate(170deg);
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-.opacity-filter img {
+.opacity-filter {
   filter: opacity(25%);
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-.invert-filter img {
+.invert-filter {
   filter: invert(75%);
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-.contrast-filter img {
+.contrast-filter {
   filter: contrast(200%);
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-.sepia-filter img {
+.sepia-filter {
   filter: sepia(60%);
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 @media (width > 48rem) {
