@@ -37,7 +37,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 6.25rem;
-  font-family: var(--main-font-family);
+  font-family: var(--main-font-family); /*альтернативный шрифт находится в переменной */
   align-items: center;
 }
 
@@ -52,7 +52,7 @@
   margin-bottom: 6.25rem;
   width: clamp(23.438rem, 16.373rem + 30.14vw, 43.5rem);
   display: grid;
-  font-family: var(--accent-font-family), sans-serif;
+  font-family: var(--accent-font-family);
   text-align: center;
   color: var(--accent-color);
   background-color: var(--background-color);
