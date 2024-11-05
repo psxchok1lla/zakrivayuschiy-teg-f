@@ -64,6 +64,7 @@
 .title {
   text-transform: uppercase;
   font-size: clamp(3.063rem, 2.71rem + 1.5vw, 4.063rem);
+  font-variation-settings: "wght" var(--wght);
 }
 
 .subtitle {
@@ -403,11 +404,6 @@ dialog:not([open]) {
 
 .close-button:hover {
   cursor: pointer;
-}
-
-.close-button:active {
-  background-color: var(--accent-color);
-  color: var(--background-color);
 }
 
 .multiple-filter {

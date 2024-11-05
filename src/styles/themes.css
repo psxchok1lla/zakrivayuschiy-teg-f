@@ -16,14 +16,11 @@
     --color-gradient-start: rgba(0 127 12 / 1);
     --color-gradient-end: rgba(0 67 6 / 1);
     --background-color: rgba(0 0 0/ 1);
-    --background-color-button: rgba(0 0 0/ 1);
     --pointer-color: rgba(0 204 20/ 1);
-    --pointer-text-color: rgba(0 204 20/ 1);
     --hover-text-color: rgba(0 0 0/ 0.6);
     --active-text-color: rgba(0 0 0/ 0.6);
     --gradient-start-color: rgba(0 0 0/ 1);
     --button-color-text: rgba(0 204 20/ 1);
-    --gradient-interim-color: transparent;
     --contour: rgba(0 204 20/ 1);
     --filling: rgba(255 0 0 / 1);
   }
@@ -36,30 +33,26 @@
     --color-gradient-start: rgba(231 231 231 / 1);
     --color-gradient-end: rgba(26 26 26 / 1);
     --background-color: rgba(255 255 255/ 1);
-    --background-color-button: rgba(255 255 255/ 1);
     --pointer-color: rgba(0 0 0/ 1);
     --hover-text-color: rgba(0 0 0/ 1);
     --active-text-color: rgba(0 0 0/ 1);
-    --button-color-text: rgba(0 0 0/ 1);
+    --button-color-text: rgba(255 255 255/ 1);
     --gradient-interim-color: transparent;
     --contour: rgba(0 0 0/ 1);
     --filling: rgba(255 0 0 / 1);
   }
 }
 
-:root .theme-dark {
+:root.theme-dark {
   --accent-color: rgba(0 204 20/ 1);
   --color-gradient-start: rgba(0 127 12 / 1);
   --color-gradient-end: rgba(0 67 6 / 1);
   --background-color: rgba(0 0 0/ 1);
-  --background-color-button: rgba(0 0 0/ 1);
   --pointer-color: rgba(0 204 20/ 1);
-  --pointer-text-color: rgba(0 204 20/ 1);
   --hover-text-color: rgba(0 0 0/ 0.6);
   --active-text-color: rgba(0 0 0/ 0.6);
   --gradient-start-color: rgba(0 0 0/ 1);
   --button-color-text: rgba(0 204 20/ 1);
-  --gradient-interim-color: transparent;
   --contour: rgba(0 204 20/ 1);
   --filling: rgba(255 0 0 / 1);
 }
@@ -69,12 +62,10 @@
   --color-gradient-start: rgba(231 231 231 / 1);
   --color-gradient-end: rgba(26 26 26 / 1);
   --background-color: rgba(255 255 255/ 1);
-  --background-color-button: rgba(255 255 255/ 1);
   --pointer-color: rgba(0 0 0/ 1);
   --hover-text-color: rgba(0 0 0/ 1);
   --active-text-color: rgba(0 0 0/ 1);
   --button-color-text: rgba(255 255 255/ 1);
-  --gradient-interim-color: transparent;
   --contour: rgba(0 0 0/ 1);
   --filling: rgba(255 0 0 / 1);
 }
